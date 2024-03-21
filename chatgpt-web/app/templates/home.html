@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/sidebar-nav.css">
+    <link rel="stylesheet" href="../static/css/home.css" />
+    <title>Home</title>
+</head>
+<body>
+    <div id="background"></div>
+    <div id="fab">&#43;</div>
+    <!-- Header -->
+    <header id="page-header">
+        <a id="hamburger" href="#sidebar-nav" target="_self">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </a>
+        <!-- Seacher -->
+        <div class="search">
+            <input id="input" type="text" placeholder="Enter keywords" >
+            <button></button>
+        </div>
+    </header>
+    <!-- Siderbar -->
+    <nav id="sidebar-nav">
+        <header id="sidebar-header">
+            <a id="codepen-link" href="#" target="_blank"></a>
+            <div id="profile-info">
+                <h3 id="profile-name">Yueying Xie</h3>
+                <h4 id="blurb">Cancer Doctor</h4>
+            </div>
+            <a id="btn-more">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </a>
+            <ul id="sidebar-nav-list">
+                <li class="sidebar-nav-item" id="nav-item-home"><a href="{{ url_for('main.home') }}"><i class="material-icons"></i>Dashboard</a></li>
+                <li class="sidebar-nav-item" id="nav-item-social"><a href="#"><i class="material-icons"></i>Patient</a></li>
+                <li class="sidebar-nav-item" id="nav-item-mail"><a href="{{ url_for('main.chat') }}"><i class="material-icons"></i>Chat</a></li>
+                <li class="sidebar-nav-item" id="nav-item-pictures"><a href="#"><i class="material-icons"></i>Payment</a></li>
+                <li class="sidebar-nav-item" id="nav-item-music"><a href="#"><i class="material-icons"></i>Settings</a></li>
+                <li class="sidebar-nav-item" id="nav-item-files"><a href="#"><i class="material-icons"></i>Support</a></li>
+                <li class="sidebar-nav-item" id="nav-item-files"><a href="{{ url_for('main.logout') }}"><i class="material-icons"></i>Log out</a></li>
+            </ul>
+        </header>
+    </nav>
+    <a id="nav-screen-overlay" href="#" target="_self"></a>
+  
+    <!-- 页面内容 -->
+    <div class="content">
+        <!-- 问候语卡片 -->
+        <div class="card greeting">
+            <h2>Good Morning Dr.Xie!</h2>
+            <p>You have 12 patients remaining today!</p>
+        </div>
+    
+        <!-- Prediction -->
+        <div class="prediction">
+            <!-- Survival rate -->
+            <div class="card survival">
+                <span class=>Survival Rate</span>
+                <a id="survival_img" href="{{ url_for('main.survival') }}"></a>
+            </div>
+            <!-- Disease progression -->
+            <div class="card progression">
+                <span class=>Disease Progression</span>
+                <a id="progression_img" href="#"></a>
+            </div>
+            <!-- Treatment response -->
+            <div class="card response">
+                <span class=>Treatment response</span>
+                <a id="response_img" href="#"></a>
+            </div>
+            <!-- Chat -->
+            <div class="card chat">
+                <span class=>Chat</span>
+                <a id="chat_img" href="{{ url_for('main.chat') }}"></a>
+            </div>
+        </div>
+
+        <!-- 第三排 -->
+        <div class="third">
+            <!-- 日程卡片 -->
+            <div class="card appointments">
+                <div class="card-header">
+                    <h3>Today Appointments</h3>
+                    <a href="#">Show All</a>
+                </div>
+                <ul class="appointment-list">
+                    <li class="appointment">
+                        <img src="../static/images/man.svg" alt="Barry Guo">
+                        <div class="appointment-info">
+                            <h4>Barry Guo</h4>
+                            <p>Emergency</p>
+                            <p>Age: 22</p>
+                        </div>
+                        <span class="appointment-time">8:30 AM</span>
+                    </li>
+                    <li class="appointment">
+                        <img src="../static/images/female.svg" alt="Violetta Weng">
+                        <div class="appointment-info">
+                            <h4>Violetta Weng</h4>
+                            <p>Normal</p>
+                            <p>Age: 22</p>
+                        </div>
+                        <span class="appointment-time">9:00 AM</span>
+                    </li>
+                    <li class="appointment">
+                        <img src="../static/images/female.svg" alt="Loski Liu">
+                        <div class="appointment-info">
+                            <h4>Loski Liu</h4>
+                            <p>Normal</p>
+                            <p>Age: 24</p>
+                        </div>
+                        <span class="appointment-time">9:30 AM</span>
+                    </li>
+                </ul>
+            </div>
+            <!-- 分析卡片 -->
+            <div class="card analytics">
+                <h3>Analytics</h3>
+                <div class="analytics_img"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

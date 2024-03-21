@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+:root {
+  --primary-color: #a1c7a3;
+  /* --primary-color: #77cd98; */
+  --secondary-color: #717775;
+  --text-dark: #333333;
+  --text-light: #767268;
+  --extra-light: #f3f4f6;
+  --white: #ffffff;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.container__left {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background-color: var(--primary-color);
+}
+
+.container__left img {
+  width: 100%;
+  max-width: 550px;
+}
+
+.container__left h2 {
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: var(--white);
+}
+
+.container__right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  width: 100%;
+  max-width: 350px;
+  display: grid;
+  gap: 1rem;
+}
+
+.logo {
+  max-width: 150px;
+  margin: auto;
+  margin-bottom: 2rem;
+}
+
+.header {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--secondary-color);
+  text-align: center;
+}
+
+form {
+  display: grid;
+}
+
+.input__group {
+  position: relative;
+  margin: 1rem 0;
+}
+
+form label {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+form input {
+  padding: 1rem 0;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid var(--secondary-color);
+}
+
+form input:focus ~ label {
+  top: 0;
+  font-size: 0.8rem;
+}
+
+form p {
+  text-align: right;
+  margin-bottom: 1.5rem;
+}
+
+form p a {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+form button {
+  padding: 0.75rem 3rem;
+  max-width: fit-content;
+  margin: auto;
+  outline: none;
+  border: none;
+  border-radius: 5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--white);
+  background-color: var(--secondary-color);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+form button:hover {
+  background-color: var(--primary-color);
+}
+
+.divider {
+  position: relative;
+  isolation: isolate;
+  text-align: center;
+  width: 100%;
+  max-width: 200px;
+  margin: 2rem auto;
+}
+
+.divider::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 1px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--secondary-color);
+  z-index: -1;
+}
+
+.divider span {
+  padding: 0 1rem;
+  color: var(--secondary-color);
+  background-color: var(--white);
+}
+
+.google__login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+
+.google__login img {
+  max-width: 25px;
+}
+
+.google__login span {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--secondary-color);
+  transition: 0.3s;
+}
+
+.google__login:hover span {
+  color: var(--primary-color);
+}
+
+.create__account {
+  color: var(--secondary-color);
+  text-align: center;
+}
+
+.create__account a {
+  color: var(--primary-color);
+}
+
+@media (width < 788px) {
+  .container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .container__left,
+  .container__right {
+    min-height: 100vh;
+  }
+}

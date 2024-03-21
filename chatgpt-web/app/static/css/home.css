@@ -1,0 +1,215 @@
+
+/* content */
+.content {
+    background-color: #f4f4fa;
+    margin-top: 60px;
+    padding: 20px; /* 根据需要调整 */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* 卡片之间的间距 */
+    font-family: Comic Sans MS;
+}
+  
+.card {
+    background-color: white;
+    border-radius: 15px; /* 圆角 */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+    padding: 15px; /* 内边距 */
+    margin-top: 20px; /* 上边距 */
+}
+  
+/* Greeting */
+.card.greeting {
+    height: 150px;
+    background-image: url(../images/greeting.svg);
+}
+
+/* Predivtion */
+.prediction {
+    display: flex; /* This will align the child divs in a row */
+    justify-content: space-between; /* This will add space between the cards */
+    gap: 10px; /* Optionally add some space between the cards */
+    /* height: 200px; */
+}
+
+.card.survival,
+.card.progression,
+.card.response,
+.card.chat {
+    flex: 1; /* Each card will take equal space */
+    height: 150px; /* Keeping heights consistent */
+    margin: 0; /* Reset any margin */
+}
+
+/* Survival rate */
+#survival_img {
+    display: block;
+    top: 15px;
+    left: 100px;
+    height: 90px;
+    width: 100px;
+    z-index: 10;
+    box-sizing: border-box;
+    background-color: white;
+    background-position: center center;
+    background-size: cover;
+    opacity: 0.6;
+    transition: all 0.25s;
+    background-image: url(../images/survival.svg);
+}
+
+/* Disease progression */
+#progression_img {
+    display: block;
+    top: 15px;
+    left: 36%;
+    height: 90px;
+    width: 100px;
+    z-index: 10;
+    box-sizing: border-box;
+    background-color: white;
+    background-position: center center;
+    background-size: cover;
+    opacity: 0.6;
+    transition: all 0.25s;
+    background-image: url(../images/progression.svg);
+}
+
+/* Treatment response */
+#response_img {
+    display: block;
+    top: 15px;
+    left: 36%;
+    height: 80px;
+    width: 100px;
+    z-index: 10;
+    box-sizing: border-box;
+    background-color: white;
+    background-position: center center;
+    background-size: cover;
+    opacity: 0.6;
+    transition: all 0.25s;
+    background-image: url(../images/response.svg);
+}
+
+/* Chat */
+#chat_img {
+    display: block;
+    top: 15px;
+    left: 25%;
+    height: 80px;
+    width: 170px;
+    z-index: 10;
+    box-sizing: border-box;
+    background-color: white;
+    background-position: center center;
+    background-size: cover;
+    opacity: 0.6;
+    transition: all 0.25s;
+    background-image: url(../images/chat.svg);
+}
+
+
+/* Third */
+.third {
+    display: flex; /* Layout the third row using flex */
+    justify-content: space-between; /* Add space between the two cards */
+    gap: 20px; /* Optionally add some space between the cards */
+}
+
+/* Appointments */
+.third .card.appointments,
+.third .card.analytics {
+    width: calc(50% - 10px); /* Adjust width to fit two cards per row, considering the gap */
+    height: auto; /* Adjust height to content */
+    display: flex; /* Needed to use flex properties */
+    flex-direction: column; /* Stack child elements vertically */
+}
+  
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+  
+.card-header h3 {
+    font-size: 18px;
+    color: #333;
+}
+  
+.card-header a {
+    font-size: 14px;
+    color: #a1c7a3;
+    text-decoration: none;
+}
+  
+.appointment-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+  
+.appointment {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #ffffff; /* or use a background image */
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.appointment:last-child {
+    margin-bottom: 0;
+}
+  
+.appointment img {
+    border-radius: 50%;
+    width: 50px; /* Adjust size accordingly */
+    height: 50px; /* Adjust size accordingly */
+    margin-right: 10px;
+}
+  
+.appointment-info {
+    flex-grow: 1;
+}
+  
+.appointment-info h4 {
+    font-size: 16px;
+    margin: 0 0 5px 0;
+  }
+  
+.appointment-info p {
+    font-size: 14px;
+    margin: 0;
+    color: #666;
+}
+  
+.appointment-time {
+    font-size: 14px;
+    color: #333;
+    white-space: nowrap;
+}
+
+/* Analytics */
+.card.analytics {
+    display: block;
+    width: 600px;
+    height: 400px;
+}
+.analytics_img {
+    width: 560px;
+    height: 380px;
+    background-image: url(../images/analytics.svg);
+}
+    
+/* 响应式布局调整 */
+@media (max-width: 768px) {
+    .content {
+      flex-direction: column;
+    }
+
+    .card.overview {
+      flex-direction: column;
+    }
+}  
