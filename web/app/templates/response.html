@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/sidebar-nav.css">
+    <link rel="stylesheet" href="../static/css/survival.css">
+    <title>Treatment Response</title>
+</head>
+<body>
+    <div id="background"></div>
+    <div id="fab">&#43;</div>
+    
+    <!-- Header -->
+    <header id="page-header">
+        <a id="hamburger" href="#sidebar-nav" target="_self">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </a>
+        <!-- Seacher -->
+        <div class="search">
+            <input id="input" type="text" placeholder="Enter keywords" >
+            <button></button>
+        </div>
+    </header>
+
+    <!-- Siderbar -->
+    <nav id="sidebar-nav">
+        <header id="sidebar-header">
+            <a id="codepen-link" href="#" target="_blank"></a>
+            <div id="profile-info">
+                <h3 id="profile-name">Yueying Xie</h3>
+                <h4 id="blurb">Cancer Doctor</h4>
+            </div>
+            <a id="btn-more">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </a>
+            <ul id="sidebar-nav-list">
+                <li class="sidebar-nav-item" id="nav-item-home"><a href="{{ url_for('main.home') }}"><i class="material-icons"></i>Dashboard</a></li>
+                <li class="sidebar-nav-item" id="nav-item-patient"><a href="#"><i class="material-icons"></i>Patient</a></li>
+                <li class="sidebar-nav-item" id="nav-item-chat"><a href="{{ url_for('main.chat') }}"><i class="material-icons"></i>AI Chat</a></li>
+                <li class="sidebar-nav-item" id="nav-item-messages"><a href="#"><i class="material-icons"></i>Messages</a></li>
+                <li class="sidebar-nav-item" id="nav-item-settings"><a href="#"><i class="material-icons"></i>Settings</a></li>
+                <li class="sidebar-nav-item" id="nav-item-support"><a href="#"><i class="material-icons"></i>Support</a></li>
+                <li class="sidebar-nav-item" id="nav-item-logout"><a href="{{ url_for('main.logout') }}"><i class="material-icons"></i>Log out</a></li>
+            </ul>
+        </header>
+    </nav>
+    <a id="nav-screen-overlay" href="#" target="_self"></a>
+  
+    <!-- content -->
+    <div class="content">
+        <div class="content-item">
+            <form id="survival-form" action="{{ url_for('main.survival') }}" method="post">
+                <div class="from">
+                    <h1>Patient Information Form
+                        <span>Please fill all the texts in the fields</span>
+                    </h1>
+                    <!-- name -->
+                    <div class="input-group">
+                        <label for="name">
+                            <span for="name">Name :</span>
+                            <input type="text" id="name" name="name" required>
+                        </label>
+                    </div>
+                    <!-- Sex -->
+                    <div class="input-group">
+                        <label for="sex">
+                            <span>Sex :</span>
+                            <select id="sex" name="sex">
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </label>
+                    </div>
+                    <!-- Age -->
+                    <div class="input-group">
+                        <label for="age">
+                            <span>Age :</span>
+                            <input id="age" type="number" name="age"/>
+                        </label>
+                    </div>
+                    <!-- Cancer stage of the patient -->
+                    <div class="input-group">
+                        <label for="stage">
+                            <span>Cancer stage of the patient :</span>
+                            <select id="stage" name="stage">
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </label>
+                    </div>
+                    <!-- Did the patient receive chemotherapy after surgery? -->
+                    <div class="input-group">
+                        <label for="chemo">
+                            <span>Did the patient receive chemotherapy after surgery?</span>
+                            <select id="chemo" name="chemo">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </label>
+                    </div>
+                    <!-- Type of chemotherapy -->
+                    <div class="input-group">
+                        <label for="chemo_type">
+                            <span>Type of chemotherapy?</span>
+                            <select id="chemo_type" name="chemo_type">
+                                <option value="5FU">5FU</option>
+                                <option value="FOLFIRI">FOLFIRI</option>
+                                <option value="FOLFOX">FOLFOX</option>
+                                <option value="FUFOL">FUFOL</option>
+                                <option value="other">other</option>
+                            </select>
+                        </label>
+                    </div>
+                    <!-- Relapse or not (0=No, 1=Yes) -->
+                    <div class="input-group">
+                        <label for="relapse">
+                            <span>Relapse or not (0=No, 1=Yes) :</span>
+                            <select id="relapse" name="relapse">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                            </select>
+                        </label>
+                    </div>
+                    <!-- Duration before relapse occurs (month) -->
+                    <div class="input-group">
+                        <label for="relapse_months">
+                            <span>Duration before relapse occurs (month) :</span>
+                            <input id="dbm" type="number" name="dbm"/>
+                        </label>
+                    </div>
+                    <!-- Duration before death (month) -->
+                    <div class="input-group">
+                        <label for="death_months">
+                            <span>Duration before death (month) :</span>
+                            <input id="death_months" type="number" name="death_months"/>
+                        </label>
+                    </div>
+                    <!-- Consensus Molecular Subtypes -->
+                    <div class="input-group">
+                        <label for="cms">
+                            <span>Type of chemotherapy?</span>
+                            <select id="cms" name="cms">
+                                <option value="CMS1">CMS1</option>
+                                <option value="CMS2">CMS2</option>
+                                <option value="CMS3">CMS3</option>
+                                <option value="CMS4">CMS4</option>
+                                <option value="UNK">UNK</option>
+                            </select>
+                        </label>
+                    </div>
+                    <!-- Pathway-derived Subtypes -->
+                    <div class="input-group">
+                        <label for="pds">
+                            <span>Type of chemotherapy?</span>
+                            <select id="pds" name="pds">
+                                <option value="PDS1">PDS1</option>
+                                <option value="PDS2">PDS2</option>
+                                <option value="PDS3">PDS3</option>
+                                <option value="Mixed">Mixed</option>
+                            </select>
+                        </label>
+                    </div>
+                    <!-- submin -->
+                    <div class="input-group">
+                        <label id="submit">
+                            <button type="submit" class="button" value="Send">Submit</button>
+                        </label>
+                    </div>
+                </div>
+            </form>
+            <div class="result" style="display: none;">
+            
+            <div id="prediction-result">
+                {% if prediction is not none %}
+                <p>Predicted survival rate: {{ prediction }}</p>
+                {% endif %}
+            </div>
+        </div>
+        </div>
+    </div>
+
+    
+    <script type="text/javascript" src="../static/js/survival.js"></script>
+</body>
+</html>

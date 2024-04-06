@@ -14,13 +14,13 @@
     font-weight: normal;
     font-style: normal;
     font-display: block;
-  }
+}
 
 html,
 body {
   width: 100%;
   /* color: (228, 239, 231); */
-  font-family: "Roboto", sans-serif;
+  font-family: Comic Sans MS;;
 }
 
 ::-moz-selection {
@@ -38,6 +38,10 @@ a {
 
 li {
     list-style: none;
+}
+
+i {
+  font-style: normal;
 }
 
 #background {
@@ -61,6 +65,7 @@ li {
   height: 60px;
   width: 60px;
   border-radius: 50%;
+  color: #fff;
   background-color: #a1c7a3;
   box-shadow: 0 2px 8px #3f3f3f;
   text-align: center;
@@ -88,7 +93,6 @@ li {
     padding-left: 15px; /* 确保内容和左边有一定间隔 */
     padding-right: 20px; /* 确保内容和右边有20px间隔 */
     justify-content: space-between; /* 保持子元素在两边 */
-    font-family: Comic Sans MS;
 }
   
 /* Header-line */
@@ -178,7 +182,6 @@ li {
   box-shadow: 0 0 0 0 #3f3f3f;
   transform: translateX(-400px);
   transition: transform 0.5s ease-in-out;
-  font-family: Comic Sans MS;
 }
 
 #sidebar-nav #sidebar-header {
@@ -186,7 +189,6 @@ li {
   height: 32%;
   width: 100%;
   background-color: #a1c7a3;
-  /* background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/544318/material-header.jpg"); */
   background-size: cover;
 }
 

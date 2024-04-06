@@ -26,7 +26,7 @@ body {
   grid-template-columns: repeat(2, 1fr);
 }
 
-.container__left {
+.container_left {
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -36,18 +36,18 @@ body {
   background-color: var(--primary-color);
 }
 
-.container__left img {
+.container_left img {
   width: 100%;
   max-width: 550px;
 }
 
-.container__left h2 {
+.container_left h2 {
   font-size: 1.75rem;
   font-weight: 500;
   color: var(--white);
 }
 
-.container__right {
+.container_right {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,7 +61,7 @@ body {
 }
 
 .logo {
-  max-width: 150px;
+  max-width: 250px;
   margin: auto;
   margin-bottom: 2rem;
 }
@@ -78,7 +78,7 @@ form {
   display: grid;
 }
 
-.input__group {
+.input_group {
   position: relative;
   margin: 1rem 0;
 }
@@ -165,7 +165,7 @@ form button:hover {
   background-color: var(--white);
 }
 
-.google__login {
+.google_login {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -174,27 +174,27 @@ form button:hover {
   margin-bottom: 2rem;
 }
 
-.google__login img {
+.google_login img {
   max-width: 25px;
 }
 
-.google__login span {
+.google_login span {
   font-size: 1rem;
   font-weight: 500;
   color: var(--secondary-color);
   transition: 0.3s;
 }
 
-.google__login:hover span {
+.google_login:hover span {
   color: var(--primary-color);
 }
 
-.create__account {
+.create_account {
   color: var(--secondary-color);
   text-align: center;
 }
 
-.create__account a {
+.create_account a {
   color: var(--primary-color);
 }
 
@@ -203,8 +203,8 @@ form button:hover {
     grid-template-columns: repeat(1, 1fr);
   }
 
-  .container__left,
-  .container__right {
+  .container_left,
+  .container_right {
     min-height: 100vh;
   }
 }

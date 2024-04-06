@@ -51,7 +51,7 @@ def home():
 @main.route('/chat')
 def chat():
     if 'username' in session:
-        return render_template('index.html')  # 确保用户已登录才能访问聊天页面
+        return render_template('chat.html')  # 确保用户已登录才能访问聊天页面
     return redirect(url_for('main.login'))  # 未登录用户重定向到登录页面
 
 @main.route('/')
@@ -105,6 +105,7 @@ def survival():
         global model
         if model is not None:
             prediction = predict_death_probability(model, input_df)
+            prediction = round(prediction * 100, 2)
             return jsonify({'prediction': str(prediction)})
         else:
             return jsonify({'error': 'Model could not be loaded'}), 500

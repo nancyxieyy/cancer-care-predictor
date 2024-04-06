@@ -38,20 +38,20 @@
             </a>
             <ul id="sidebar-nav-list">
                 <li class="sidebar-nav-item" id="nav-item-home"><a href="{{ url_for('main.home') }}"><i class="material-icons"></i>Dashboard</a></li>
-                <li class="sidebar-nav-item" id="nav-item-social"><a href="#"><i class="material-icons"></i>Patient</a></li>
-                <li class="sidebar-nav-item" id="nav-item-mail"><a href="{{ url_for('main.chat') }}"><i class="material-icons"></i>Chat</a></li>
-                <li class="sidebar-nav-item" id="nav-item-pictures"><a href="#"><i class="material-icons"></i>Payment</a></li>
-                <li class="sidebar-nav-item" id="nav-item-music"><a href="#"><i class="material-icons"></i>Settings</a></li>
-                <li class="sidebar-nav-item" id="nav-item-files"><a href="#"><i class="material-icons"></i>Support</a></li>
-                <li class="sidebar-nav-item" id="nav-item-files"><a href="{{ url_for('main.logout') }}"><i class="material-icons"></i>Log out</a></li>
+                <li class="sidebar-nav-item" id="nav-item-patient"><a href="#"><i class="material-icons"></i>Patient</a></li>
+                <li class="sidebar-nav-item" id="nav-item-chat"><a href="{{ url_for('main.chat') }}"><i class="material-icons"></i>AI Chat</a></li>
+                <li class="sidebar-nav-item" id="nav-item-messages"><a href="#"><i class="material-icons"></i>Messages</a></li>
+                <li class="sidebar-nav-item" id="nav-item-settings"><a href="#"><i class="material-icons"></i>Settings</a></li>
+                <li class="sidebar-nav-item" id="nav-item-support"><a href="#"><i class="material-icons"></i>Support</a></li>
+                <li class="sidebar-nav-item" id="nav-item-logout"><a href="{{ url_for('main.logout') }}"><i class="material-icons"></i>Log out</a></li>
             </ul>
         </header>
     </nav>
     <a id="nav-screen-overlay" href="#" target="_self"></a>
   
-    <!-- 页面内容 -->
+    <!-- Content -->
     <div class="content">
-        <!-- 问候语卡片 -->
+        <!-- Greeting -->
         <div class="card greeting">
             <h2>Good Morning Dr.Xie!</h2>
             <p>You have 12 patients remaining today!</p>

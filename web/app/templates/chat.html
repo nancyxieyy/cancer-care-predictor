@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/sidebar-nav.css">
+    <link rel="stylesheet" href="../static/css/chat.css">
+    <title>Chat</title>
+    <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"> -->
+</head>
+<body>
+    <div id="background"></div>
+    <div id="fab">&#43;</div>
+    <!-- Header -->
+    <header id="page-header">
+        <a id="hamburger" href="#sidebar-nav" target="_self">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </a>
+        <!-- Seacher -->
+        <div class="search">
+            <input id="input" type="text" placeholder="Enter keywords" >
+            <button></button>
+        </div>
+    </header>
+    <!-- Siderbar -->
+    <nav id="sidebar-nav">
+        <header id="sidebar-header">
+            <a id="codepen-link" href="#" target="_blank"></a>
+            <div id="profile-info">
+                <h3 id="profile-name">Yueying Xie</h3>
+                <h4 id="blurb">Cancer Doctor</h4>
+            </div>
+            <a id="btn-more">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </a>
+            <ul id="sidebar-nav-list">
+                <li class="sidebar-nav-item" id="nav-item-home"><a href="{{ url_for('main.home') }}"><i class="material-icons"></i>Dashboard</a></li>
+                <li class="sidebar-nav-item" id="nav-item-patient"><a href="#"><i class="material-icons"></i>Patient</a></li>
+                <li class="sidebar-nav-item" id="nav-item-chat"><a href="{{ url_for('main.chat') }}"><i class="material-icons"></i>AI Chat</a></li>
+                <li class="sidebar-nav-item" id="nav-item-messages"><a href="#"><i class="material-icons"></i>Messages</a></li>
+                <li class="sidebar-nav-item" id="nav-item-settings"><a href="#"><i class="material-icons"></i>Settings</a></li>
+                <li class="sidebar-nav-item" id="nav-item-support"><a href="#"><i class="material-icons"></i>Support</a></li>
+                <li class="sidebar-nav-item" id="nav-item-logout"><a href="{{ url_for('main.logout') }}"><i class="material-icons"></i>Log out</a></li>
+            </ul>
+        </header>
+    </nav>
+    <a id="nav-screen-overlay" href="#" target="_self"></a>
+  
+    <!-- Content -->
+    <div class="content">
+        <!-- Top -->
+        <div class="top">
+            <h1 class="text-center my-4">ChatGPT Web Chat</h1>
+        </div>
+        
+        <!-- Chat Area -->
+        <div class="chatarea">
+            <!-- Chat Left Side -->
+            <div class="chat-left-side">
+                <ul class="chat-list">
+                    <li class="chat">
+                        <img src="../static/images/man.svg" alt="Barry Guo">
+                        <div class="chat-info">
+                            <h4>Barry Guo</h4>
+                            <p>Emergency</p>
+                        </div>
+                        <span class="chat-time">8:30 AM</span>
+                    </li>
+                    <li class="chat">
+                        <img src="../static/images/female.svg" alt="Violetta Weng">
+                        <div class="chat-info">
+                            <h4>Violetta Weng</h4>
+                            <p>Normal</p>
+                        </div>
+                        <span class="chat-time">9:00 AM</span>
+                    </li>
+                    <li class="chat">
+                        <img src="../static/images/female.svg" alt="Loski Liu">
+                        <div class="chat-info">
+                            <h4>Loski Liu</h4>
+                            <p>Normal</p>
+
+                        </div>
+                        <span class="chat-time">9:30 AM</span>
+                    </li>
+                    <li class="chat">
+                        <img src="../static/images/man.svg" alt="Loski Liu">
+                        <div class="chat-info">
+                            <h4>Javen Xu</h4>
+                            <p>Normal</p>
+                        </div>
+                        <span class="chat-time">9:30 AM</span>
+                    </li>
+                    <li class="chat">
+                        <img src="../static/images/female.svg" alt="Loski Liu">
+                        <div class="chat-info">
+                            <h4>Chris Wen</h4>
+                            <p>Normal</p>
+                        </div>
+                        <span class="chat-time">9:30 AM</span>
+                    </li>
+                </ul>
+            </div>
+            <!-- Chat Right Side -->
+            <div class="chat-right-side">
+                <div id="chat-area" class="mb-4" style="display: block;  height: 450px; "></div>
+                <div class="form-group">
+                    <textarea id="user-input" class="form-control mb-2" rows="3" placeholder="Type your message here..."></textarea>
+                    <button id="send-button" class="btn btn-primary">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="../static/js/chat.js"></script>
+</body>
+</html>

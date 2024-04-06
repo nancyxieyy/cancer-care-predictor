@@ -5,7 +5,7 @@ import papermill as pm
 import os
 
 # 假设文件路径和名称
-DATASET_PATH = 'gse39582_n469_clinical_data.xlsx'
+DATASET_PATH = 'Dataset/gse39582_n469_clinical_data.xlsx'
 MODEL_PATH = 'model.pkl'
 NOTEBOOK_PATH = 'survivalRate.ipynb'
 OUTPUT_NOTEBOOK_PATH = 'output_survivalRate.ipynb'
