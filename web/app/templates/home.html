@@ -67,12 +67,12 @@
             <!-- Disease progression -->
             <div class="card progression">
                 <span class=>Disease Progression</span>
-                <a id="progression_img" href="#"></a>
+                <a id="progression_img" href="{{ url_for('main.disease') }}"></a>
             </div>
             <!-- Treatment response -->
             <div class="card response">
-                <span class=>Treatment response</span>
-                <a id="response_img" href="#"></a>
+                <span class=>Treatment Response</span>
+                <a id="response_img" href="{{ url_for('main.treatment') }}"></a>
             </div>
             <!-- Chat -->
             <div class="card chat">
@@ -81,9 +81,9 @@
             </div>
         </div>
 
-        <!-- 第三排 -->
+        <!-- Third -->
         <div class="third">
-            <!-- 日程卡片 -->
+            <!-- Card -->
             <div class="card appointments">
                 <div class="card-header">
                     <h3>Today Appointments</h3>
@@ -119,7 +119,7 @@
                     </li>
                 </ul>
             </div>
-            <!-- 分析卡片 -->
+            <!-- Analytics -->
             <div class="card analytics">
                 <h3>Analytics</h3>
                 <div class="analytics_img"></div>

@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/css/sidebar-nav.css">
     <link rel="stylesheet" href="../static/css/survival.css">
-    <title>Disease Progression</title>
+    <title>Treatment Response</title>
 </head>
 <body>
     <div id="background"></div>
     <div id="fab">&#43;</div>
-
+    
     <!-- Header -->
     <header id="page-header">
         <a id="hamburger" href="#sidebar-nav" target="_self">
@@ -54,7 +54,8 @@
     <!-- content -->
     <div class="content">
         <div class="content-item">
-            <form id="survival-form" action="{{ url_for('main.survival') }}" method="post">
+            <!-- form -->
+            <form id="treatment-form" action="{{ url_for('main.treatment') }}" method="post">
                 <div class="from">
                     <h1>Patient Information Form
                         <span>Please fill all the texts in the fields</span>
@@ -177,7 +178,7 @@
             
             <div id="prediction-result">
                 {% if prediction is not none %}
-                <p>Predicted survival rate: {{ prediction }}</p>
+                <p>Predicted Relapse rate: {{ prediction }}</p>
                 {% endif %}
             </div>
         </div>
@@ -185,6 +186,32 @@
     </div>
 
     
-    <script type="text/javascript" src="../static/js/survival.js"></script>
+    <script type="text/javascript" >
+        // 监听 DOMContentLoaded 事件以确保页面已加载
+        document.addEventListener('DOMContentLoaded', function() {
+            var form = document.getElementById('treatment-form');
+            var resultDiv = document.querySelector('.result'); // 获取结果 div
+
+            form.onsubmit = function(e) {
+                e.preventDefault(); // 阻止表单的默认提交行为
+
+                var formData = new FormData(form);
+                fetch("{{ url_for('main.treatment') }}", {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if(data.prediction) {
+                        document.getElementById('prediction-result').textContent = 'Predicted Relapse rate: ' + data.prediction + ' %';
+                        resultDiv.style.display = "block"; // 显示结果 div
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            };
+        });
+    </script>
 </body>
 </html>

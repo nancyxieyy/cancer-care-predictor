@@ -2,19 +2,19 @@
 .content {
     background-color: #f4f4fa;
     margin-top: 60px;
-    padding: 20px; /* 根据需要调整 */
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 20px; /* 卡片之间的间距 */
+    gap: 20px;
     font-family: Comic Sans MS;
 }
   
 .card {
     background-color: white;
-    border-radius: 15px; /* 圆角 */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* 阴影效果 */
-    padding: 15px; /* 内边距 */
-    margin-top: 20px; /* 上边距 */
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin-top: 20px;
 }
   
 /* Greeting */
@@ -25,19 +25,18 @@
 
 /* Predivtion */
 .prediction {
-    display: flex; /* This will align the child divs in a row */
-    justify-content: space-between; /* This will add space between the cards */
-    gap: 10px; /* Optionally add some space between the cards */
-    /* height: 200px; */
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
 }
 
 .card.survival,
 .card.progression,
 .card.response,
 .card.chat {
-    flex: 1; /* Each card will take equal space */
-    height: 150px; /* Keeping heights consistent */
-    margin: 0; /* Reset any margin */
+    flex: 1;
+    height: 150px;
+    margin: 0;
 }
 
 /* Survival rate */
@@ -111,18 +110,18 @@
 
 /* Third */
 .third {
-    display: flex; /* Layout the third row using flex */
-    justify-content: space-between; /* Add space between the two cards */
-    gap: 20px; /* Optionally add some space between the cards */
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
 }
 
 /* Appointments */
 .third .card.appointments,
 .third .card.analytics {
-    width: calc(50% - 10px); /* Adjust width to fit two cards per row, considering the gap */
-    height: auto; /* Adjust height to content */
-    display: flex; /* Needed to use flex properties */
-    flex-direction: column; /* Stack child elements vertically */
+    width: calc(50% - 10px);
+    height: auto;
+    display: flex;
+    flex-direction: column;
 }
   
 .card-header {
@@ -153,7 +152,7 @@
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-    background-color: #ffffff; /* or use a background image */
+    background-color: #ffffff;
     border-radius: 10px;
     padding: 10px;
 }
@@ -164,8 +163,8 @@
   
 .appointment img {
     border-radius: 50%;
-    width: 50px; /* Adjust size accordingly */
-    height: 50px; /* Adjust size accordingly */
+    width: 50px;
+    height: 50px;
     margin-right: 10px;
 }
   
@@ -202,7 +201,6 @@
     background-image: url(../images/analytics.svg);
 }
     
-/* 响应式布局调整 */
 @media (max-width: 768px) {
     .content {
       flex-direction: column;

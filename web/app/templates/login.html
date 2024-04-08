@@ -1,46 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/login.css" />
-    <title>Login</title>
-  </head>
-  <body>
-    <div class="container">
-      <div class="container_left">
-        <img src="../static/images/background.png"/>
-        <h2>The greatest wealth is health</h2>
-      </div>
-      <div class="container_right">
-        <div class="content">
-          <img class="logo" src="../static/images/logo.png" alt="logo" />
-          <p class="header">Welcome to CancerCare</p>
-          <form action="/login" method="post">
-            <div class="input_group">
-              <input type="text" name="username" required />
-              <label for="username">Username or Email</label>
-            </div>
-            <div class="input_group">
-              <input type="password" name="password" required />
-              <label for="password">Password</label>
-            </div>
-            <p><a href="#">Forgot password?</a></p>
-            <button type="submit">Login</button>
-          </form>
-          
-          <div class="divider">
-            <span>or</span>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../static/css/login.css" />
+  <title>Login</title>
+</head>
+<body>
+  <div class="container">
+    <!-- Container Left -->
+    <div class="container_left">
+      <img src="../static/images/background.png"/>
+      <h2>The greatest wealth is health</h2>
+    </div>
+    
+    <!-- Container Right -->
+    <div class="container_right">
+      <div class="content">
+        <img class="logo" src="../static/images/logo.png" alt="logo" />
+        <p class="header">Welcome to CancerCare</p>
+
+        <!-- Login -->
+        <form action="/login" method="post">
+          <!-- Input Group -->
+          <div class="input_group">
+            <input type="text" name="username" required />
+            <label for="username">Username or Email</label>
           </div>
-          <div class="google_login">
-            <img src="../static/images/search.png" alt="google" />
-            <span>Sign in with Google</span>
+
+          <div class="input_group">
+            <input type="password" name="password" required />
+            <label for="password">Password</label>
           </div>
-          <p class="create_account">
-            New CancerCare? <a href="#">Create Account</a>
-          </p>
+          <p><a href="#">Forgot password?</a></p>
+          <button type="submit">Login</button>
+        </form>
+        
+        <!-- Divider -->
+        <div class="divider">
+          <span>or</span>
         </div>
+
+        <!-- Google Login -->
+        <div class="google_login">
+          <img src="../static/images/search.png" alt="google" />
+          <span>Sign in with Google</span>
+        </div>
+
+        <!-- Create Account -->
+        <p class="create_account">
+          New CancerCare? <a href="#">Create Account</a>
+        </p>
       </div>
     </div>
-  </body>
+  </div>
+</body>
 </html>

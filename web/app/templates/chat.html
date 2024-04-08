@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="../static/css/sidebar-nav.css">
     <link rel="stylesheet" href="../static/css/chat.css">
     <title>Chat</title>
-    <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"> -->
 </head>
 <body>
     <div id="background"></div>
@@ -106,6 +105,7 @@
                 </ul>
             </div>
             <!-- Chat Right Side -->
+            <!-- Chat Right Side -->
             <div class="chat-right-side">
                 <div id="chat-area" class="mb-4" style="display: block;  height: 450px; "></div>
                 <div class="form-group">
@@ -118,6 +118,43 @@
     
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="../static/js/chat.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            // Attaching the click event listener to the send button
+            document.getElementById('send-button').addEventListener('click', function() {
+                let userInput = document.getElementById('user-input').value;
+                if (userInput.trim() !== '') {
+                    appendMessage(userInput, 'right');
+                    document.getElementById('user-input').value = '';
+
+                    // AJAX request using Fetch API
+                    fetch('/ask', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ message: userInput }),
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        appendMessage(data.answer, 'left');
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+                }
+            });
+        });
+
+        function appendMessage(message, side) {
+            let alignClass = side === 'right' ? 'text-right' : '';
+            let messageElement = document.createElement('div');
+            messageElement.className = `mb-2 ${alignClass}`;
+            messageElement.textContent = message;
+
+            document.getElementById('chat-area').appendChild(messageElement);
+            document.getElementById('chat-area').scrollTop = document.getElementById('chat-area').scrollHeight;
+        }
+    </script>
 </body>
 </html>

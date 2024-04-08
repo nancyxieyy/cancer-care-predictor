@@ -1,10 +1,10 @@
 .content {
     background-color: #f4f4fa;
     margin-top: 60px;
-    padding: 20px; /* 根据需要调整 */
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 20px; /* 卡片之间的间距 */
+    gap: 20px;
     font-family: Comic Sans MS;
 }
 
@@ -24,7 +24,6 @@
 .input-group {
     position: relative;
     left: 15%;
-    /* margin: 5rem 0; */
 }
 
 .from h1 {
@@ -33,7 +32,6 @@
     display: block;
     border-bottom:1px solid #e4e4e4;
     margin: -10px -15px 30px -10px;
-    /* color: #888; */
 }
 
 .from h1>span {
@@ -48,13 +46,11 @@
 }
 
 .from label>span {
-    /* float: left; */
     width: 20%;
     text-align: right;
     font-size: 16px;
     padding-right: 10px;
     margin-top: 10px;
-    /* color: #888; */
 }
 
 .from input[type="text"], .from input[type="number"], .from select {

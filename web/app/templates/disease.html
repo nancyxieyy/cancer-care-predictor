@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/css/sidebar-nav.css">
     <link rel="stylesheet" href="../static/css/survival.css">
-    <title>Treatment Response</title>
+    <title>Disease Progression</title>
 </head>
 <body>
     <div id="background"></div>
     <div id="fab">&#43;</div>
-    
+
     <!-- Header -->
     <header id="page-header">
         <a id="hamburger" href="#sidebar-nav" target="_self">
@@ -54,7 +54,7 @@
     <!-- content -->
     <div class="content">
         <div class="content-item">
-            <form id="survival-form" action="{{ url_for('main.survival') }}" method="post">
+            <form id="disease-form" action="{{ url_for('main.disease') }}" method="post">
                 <div class="from">
                     <h1>Patient Information Form
                         <span>Please fill all the texts in the fields</span>
@@ -177,7 +177,7 @@
             
             <div id="prediction-result">
                 {% if prediction is not none %}
-                <p>Predicted survival rate: {{ prediction }}</p>
+                <p>预测结果: {{ prediction }}</p>
                 {% endif %}
             </div>
         </div>
@@ -185,6 +185,39 @@
     </div>
 
     
-    <script type="text/javascript" src="../static/js/survival.js"></script>
+    <script type="text/javascript">
+        // 监听 DOMContentLoaded 事件以确保页面已加载
+        document.addEventListener('DOMContentLoaded', function() {
+            var form = document.getElementById('disease-form');
+            var resultDiv = document.querySelector('.result');
+
+            form.onsubmit = function(e) {
+                e.preventDefault();
+
+                var formData = new FormData(form);
+                fetch("/disease", {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if(data.prediction) {
+                        document.getElementById('prediction-result').textContent = 'Projected results: ' + data.prediction;
+                        resultDiv.style.display = "block";
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    document.getElementById('prediction-result').textContent = 'An error has occurred. Please try again later.';
+                    resultDiv.style.display = "block";
+                });
+            };
+        });
+    </script>
 </body>
 </html>

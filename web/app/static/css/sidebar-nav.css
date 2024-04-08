@@ -19,7 +19,6 @@
 html,
 body {
   width: 100%;
-  /* color: (228, 239, 231); */
   font-family: Comic Sans MS;;
 }
 
@@ -87,12 +86,11 @@ i {
     height: 60px;
     width: 100vw;
     background-color: #f4f4fa;
-    /* box-shadow: 0 -3px 8px 5px #3f3f3f; */
     display: flex;
     align-items: center;
-    padding-left: 15px; /* 确保内容和左边有一定间隔 */
-    padding-right: 20px; /* 确保内容和右边有20px间隔 */
-    justify-content: space-between; /* 保持子元素在两边 */
+    padding-left: 15px;
+    padding-right: 20px;
+    justify-content: space-between;
 }
   
 /* Header-line */
@@ -102,7 +100,7 @@ i {
     height: 30px;
     width: 30px;
     left: 15px;
-    margin-right: 5px; /* 与搜索框之间的间距 */
+    margin-right: 5px;
 }
   
 #page-header #hamburger .line {
@@ -139,9 +137,9 @@ i {
 /* Search */
 .search {
     display: flex;
-    position: relative; /* 修改为相对定位 */
+    position: relative;
     height: 26px;
-    margin-left: 15px; /* 调整左边距以对齐 */
+    margin-left: 15px;
 }
 
 .search input {

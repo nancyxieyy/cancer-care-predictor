@@ -2,7 +2,6 @@
 
 :root {
   --primary-color: #a1c7a3;
-  /* --primary-color: #77cd98; */
   --secondary-color: #717775;
   --text-dark: #333333;
   --text-light: #767268;
@@ -20,12 +19,14 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+/* Container */
 .container {
   min-height: 100vh;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
 
+/* Container Left */
 .container_left {
   padding: 1rem;
   display: flex;
@@ -47,12 +48,14 @@ body {
   color: var(--white);
 }
 
+/* Container Right */
 .container_right {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+/* Content */
 .content {
   width: 100%;
   max-width: 350px;
@@ -138,6 +141,7 @@ form button:hover {
   background-color: var(--primary-color);
 }
 
+/* Divider */
 .divider {
   position: relative;
   isolation: isolate;
@@ -165,6 +169,7 @@ form button:hover {
   background-color: var(--white);
 }
 
+/* Gpoogle Login */
 .google_login {
   display: flex;
   align-items: center;
@@ -189,6 +194,7 @@ form button:hover {
   color: var(--primary-color);
 }
 
+/* Create Account */
 .create_account {
   color: var(--secondary-color);
   text-align: center;
