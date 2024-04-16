@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/css/sidebar-nav.css">
     <link rel="stylesheet" href="../static/css/chat.css">
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
     <title>Chat</title>
 </head>
 <body>
@@ -38,9 +39,10 @@
             </a>
             <ul id="sidebar-nav-list">
                 <li class="sidebar-nav-item" id="nav-item-home"><a href="{{ url_for('main.home') }}"><i class="material-icons"></i>Dashboard</a></li>
-                <li class="sidebar-nav-item" id="nav-item-patient"><a href="#"><i class="material-icons"></i>Patient</a></li>
+                <li class="sidebar-nav-item" id="nav-item-patient"><a href="{{ url_for('main.survival') }}"><i class="material-icons"></i>Survival Rate</a></li>
+                <li class="sidebar-nav-item" id="nav-item-messages"><a href="{{ url_for('main.disease') }}"><i class="material-icons"></i>Disease Progressiom</a></li>
+                <li class="sidebar-nav-item" id="nav-item-messages"><a href="{{ url_for('main.treatment') }}"><i class="material-icons"></i>Treatment Response</a></li>
                 <li class="sidebar-nav-item" id="nav-item-chat"><a href="{{ url_for('main.chat') }}"><i class="material-icons"></i>AI Chat</a></li>
-                <li class="sidebar-nav-item" id="nav-item-messages"><a href="#"><i class="material-icons"></i>Messages</a></li>
                 <li class="sidebar-nav-item" id="nav-item-settings"><a href="#"><i class="material-icons"></i>Settings</a></li>
                 <li class="sidebar-nav-item" id="nav-item-support"><a href="#"><i class="material-icons"></i>Support</a></li>
                 <li class="sidebar-nav-item" id="nav-item-logout"><a href="{{ url_for('main.logout') }}"><i class="material-icons"></i>Log out</a></li>
@@ -92,7 +94,7 @@
                             <h4>Javen Xu</h4>
                             <p>Normal</p>
                         </div>
-                        <span class="chat-time">9:30 AM</span>
+                        <span class="chat-time">10:00 AM</span>
                     </li>
                     <li class="chat">
                         <img src="../static/images/female.svg" alt="Loski Liu">
@@ -100,11 +102,10 @@
                             <h4>Chris Wen</h4>
                             <p>Normal</p>
                         </div>
-                        <span class="chat-time">9:30 AM</span>
+                        <span class="chat-time">10:30 AM</span>
                     </li>
                 </ul>
             </div>
-            <!-- Chat Right Side -->
             <!-- Chat Right Side -->
             <div class="chat-right-side">
                 <div id="chat-area" class="mb-4" style="display: block;  height: 450px; "></div>
@@ -119,6 +120,20 @@
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script type="text/javascript">
+        function appendMessage(message, side) {
+            let messageContainer = document.createElement('div');
+            messageContainer.className = `message-container ${side}`;
+    
+            let messageBubble = document.createElement('div');
+            messageBubble.className = `message-bubble`;
+            messageBubble.textContent = message;
+
+            messageContainer.appendChild(messageBubble);
+
+            document.getElementById('chat-area').appendChild(messageContainer);
+            document.getElementById('chat-area').scrollTop = document.getElementById('chat-area').scrollHeight;
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
             // Attaching the click event listener to the send button
             document.getElementById('send-button').addEventListener('click', function() {
@@ -145,16 +160,6 @@
                 }
             });
         });
-
-        function appendMessage(message, side) {
-            let alignClass = side === 'right' ? 'text-right' : '';
-            let messageElement = document.createElement('div');
-            messageElement.className = `mb-2 ${alignClass}`;
-            messageElement.textContent = message;
-
-            document.getElementById('chat-area').appendChild(messageElement);
-            document.getElementById('chat-area').scrollTop = document.getElementById('chat-area').scrollHeight;
-        }
     </script>
 </body>
 </html>

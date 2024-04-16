@@ -40,9 +40,10 @@
             </a>
             <ul id="sidebar-nav-list">
                 <li class="sidebar-nav-item" id="nav-item-home"><a href="{{ url_for('main.home') }}"><i class="material-icons"></i>Dashboard</a></li>
-                <li class="sidebar-nav-item" id="nav-item-patient"><a href="#"><i class="material-icons"></i>Patient</a></li>
+                <li class="sidebar-nav-item" id="nav-item-patient"><a href="{{ url_for('main.survival') }}"><i class="material-icons"></i>Survival Rate</a></li>
+                <li class="sidebar-nav-item" id="nav-item-messages"><a href="{{ url_for('main.disease') }}"><i class="material-icons"></i>Disease Progressiom</a></li>
+                <li class="sidebar-nav-item" id="nav-item-messages"><a href="{{ url_for('main.treatment') }}"><i class="material-icons"></i>Treatment Response</a></li>
                 <li class="sidebar-nav-item" id="nav-item-chat"><a href="{{ url_for('main.chat') }}"><i class="material-icons"></i>AI Chat</a></li>
-                <li class="sidebar-nav-item" id="nav-item-messages"><a href="#"><i class="material-icons"></i>Messages</a></li>
                 <li class="sidebar-nav-item" id="nav-item-settings"><a href="#"><i class="material-icons"></i>Settings</a></li>
                 <li class="sidebar-nav-item" id="nav-item-support"><a href="#"><i class="material-icons"></i>Support</a></li>
                 <li class="sidebar-nav-item" id="nav-item-logout"><a href="{{ url_for('main.logout') }}"><i class="material-icons"></i>Log out</a></li>
@@ -58,7 +59,7 @@
             <form id="treatment-form" action="{{ url_for('main.treatment') }}" method="post">
                 <div class="from">
                     <h1>Patient Information Form
-                        <span>Please fill all the texts in the fields</span>
+                        <span>Please fill all the texts in the fields for Treatment Response</span>
                     </h1>
                     <!-- name -->
                     <div class="input-group">
