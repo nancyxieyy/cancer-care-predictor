@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="49d06b6e-6f92-4c80-abf8-8b4da753ac27" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/.env" beforeDir="false" afterPath="$PROJECT_DIR$/web/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/app/models/model.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MechineLearning/DiseaseProgression.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/MechineLearning/DiseaseProgression.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/templates/chat.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/templates/chat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/templates/disease.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/templates/disease.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app/templates/treatment.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/templates/treatment.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,22 +22,22 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2erkfpLEKFjXHvCcWEMfIqhtzb6" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/nancyxie/Desktop/Coding/csc3002"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/nancyxie/Desktop/Coding/csc3002&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
